@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+
+    <script type="text/javascript">
+$(document).ready(function(){
+				
+				var TxtNameFlag=false,TxtContactNoFlag=false,TxtEmailIdFlag=false,TxtContactMsgFlag=false;
+				
+				$("#TxtName").blur(function(){
+					$("#TxtNameValidation").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#TxtNameValidation").html("(*) Firstname required..!!");
+						TxtNameFlag=false;
+					}
+					else{
+						if(!$(this).val().match($FNameLNameRegEx))
+						{
+							$("#TxtNameValidation").html("(*) Invalid firstname..!!");
+							TxtNameFlag=false;
+						}
+						else{
+							TxtNameFlag=true;
+						}
+					}
+				});
+        })
+    </script>
+    <style type="text/css">
+        small{color:red;}
+    </style>
+</head>
+<body>
+    <input type="text" id="TxtName" autofocus placeholder="Enter Your FirstName" maxlength="20" /> <br />
+    <small id="TxtNameValidation"></small><hr />
+    <input type="text" id="TxtContactNo" placeholder="Enter your Mobile Number" maxlength="10" /> <br />
+    <small id="TxtContactNoValidation"></small><hr />
+    <input type="text" id="TxtEmailId" placeholder="Enter Your Email Id" maxlength="500" /> <br />
+    <small id="TxtEmailIdValidation"></small><hr />
+    <textarea rows="5" id="TxtContactMsg" placeholder="Enter The Contact Msg Here." maxlength="200"></textarea><br/>
+		<small id="TxtContactMsgValidation"></small>	
+		<hr/>
+		<button id="BtnSubmit">submit here..</button>
+</body>
+</html>
