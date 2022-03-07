@@ -1,0 +1,43 @@
+1)Create Table
+
+    CREATE TABLE student (
+    Id int,
+    Name varchar(20),
+    Contact_No varchar(10),
+    Gender char(1)
+);
+
+2) Insert Table
+INSERT INTO `emp`(`E_name`, `E_contact`, `EmailId`) VALUES ('sahil','9825868494','sahil1@gmail.com');
+
+3) Upadate Table
+UPDATE student SET Name = "Raj" where id = 3;
+
+4) Delete Query
+DELETE FROM student where Id=1;
+
+5) Inner Join
+ SELECT * FROM 'emp' inner join student;
+
+6) left outer join
+SELECT * FROM `emp` LEFT OUTER JOIN student ON E_name=Name;
+
+7) Right Outer Join 
+SELECT * FROM `emp` RIGHT OUTER JOIN student ON E_name=Name;
+
+8) Natural Join
+select * from emp natural join student;
+
+9) Cross Join
+select *from emp cross join student;
+SELECT E_name,E_contact FROM emp CROSS JOIN student;
+
+10)Group by:
+select E_name,E_contact from emp Group by EmailId;
+
+11)Distint:
+select DISTINCT Gender from student;
+
+12)Having:
+select * from student Group by Name having (Contact_No=9737014969);
+
